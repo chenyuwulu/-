@@ -1,0 +1,23 @@
+{
+   "copyright": {
+      "message": "googlehelper.net"
+   },
+   "description": {
+      "message": "所有的关键数据都是通过api去请求获取的，所以无法简单的本地破解"
+   },
+   "error_button": {
+      "message": "点击这里"
+   },
+   "error_code": {
+      "message": "错误代码"
+   },
+   "error_network": {
+      "message": "无法连接到我们的数据中心."
+   },
+   "name": {
+      "message": "谷歌上网助手"
+   },
+   "url_domain": {
+      "message": "googlehelper.net"
+   }
+}

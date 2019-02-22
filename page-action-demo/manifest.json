@@ -1,8 +1,8 @@
 {
 	"manifest_version": 2,
-	"name": "page-action-demo",
-	"version": "1.0.0",
-	"description": "pageAction演示",
+	"name": "这里是名字",
+	"version": "1.0.1",
+	"description": "这里是备注，反正属于可以写长点的那种",
 	"icons":
 	{
 		"16": "img/icon.png",
@@ -12,7 +12,7 @@
 	"page_action":
 	{
 		"default_icon": "img/icon.png",
-		"default_title": "我是pageAction",
+		"default_title": "这个是鼠标移上去显示的",
 		"default_popup": "popup.html"
 	},
 	"permissions":

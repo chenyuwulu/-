@@ -11,8 +11,8 @@ chrome.runtime.onInstalled.addListener(function(ex){
 			}
 		]);
 	});
-});
+})//这个是原版的
 chrome.runtime.getBackgroundPage(function (eee){
 	console.log(eee)
-});
+})//获取后台页面的window对象
 console.info('这个是获取清单文件详情',chrome.runtime.getManifest())
