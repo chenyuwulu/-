@@ -174,9 +174,9 @@ function sendMessageToContentScript(message, callback)
 // 向content-script注入JS片段
 function executeScriptToCurrentTab(code)
 {
-	getCurrentTabId((tabId) =>
-	{
+	getCurrentTabId((tabId) =>{
 		chrome.tabs.executeScript(tabId, {code: code});
+		console.log('看一下tabId是什么',tabId)
 	});
 }
 
@@ -192,7 +192,23 @@ $('#update_bg_color').click(() => {
 $('#update_font_size').click(() => {
 	sendMessageToContentScript({cmd:'update_font_size', size: 42}, function(response){});
 });
-
+//个人测试
+$('#ceshi').click(()=>{
+	// chrome.tabs.query({
+	// 		active: true, 
+	// 		currentWindow: true
+	// 	}, 
+	// 	function(tabs){
+	// 	if(callback) callback(tabs.length ? tabs[0].id: null);
+	// 	// console.log(tabs)
+	// })
+	// executeScriptToCurrentTab('document.body.style.backgroundColor="red";console.log(111111111)')
+	getCurrentTabId((tabId) =>{
+		chrome.tabs.executeScript(tabId, {
+			code: '$("#app").children(".bili-wrapper").children("#chief_recommend").hide();'
+		});
+	});
+})
 // 显示badge
 $('#show_badge').click(() => {
 	chrome.browserAction.setBadgeText({text: 'New'});
