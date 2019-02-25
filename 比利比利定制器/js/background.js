@@ -1,5 +1,5 @@
-console.log($('body'))
-console.log(JSON.parse(localStorage.getItem('upname')))
+// console.log($('body'))
+// console.log('这个是存在storage里面的',JSON.parse(localStorage.getItem('upname')))
 
 chrome.tabs.onUpdated.addListener(function (){
   chrome.tabs.query({
@@ -13,8 +13,7 @@ chrome.tabs.onUpdated.addListener(function (){
 })
 // 向content-script主动发送消息
 function sendMessageToContentScript(message, callback){
-	getCurrentTabId((tabId) =>
-	{
+	getCurrentTabId((tabId) =>{
 		chrome.tabs.sendMessage(tabId, message, function(response)
 		{
 			if(callback) callback(response);
@@ -45,7 +44,7 @@ function sendMessageToContentScript(message, callback){
 function getCurrentTabId(callback){
 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
     if(callback) callback(tabs.length ? tabs[0].id: null);
-    // console.log(tabs)
+    // console.log('这是tabs',tabs)
   })
 }
 

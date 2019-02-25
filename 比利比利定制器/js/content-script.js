@@ -6,7 +6,13 @@
 // // $("#app").hide();
 // console.log($('body'))
 // console.log(JSON.parse(localStorage.getItem('chenyu')))
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
+// var a = 1
+// function xxx(e){
+//   callback(2)
+// }
+// console.log(xxx(4))
+// console.log(a)
+chrome.runtime.onMessage.addListener((request, sender, sendResponse)=>{
   var upname = JSON.parse(request.cmd)
   var $shouye = $("#app").children(".bili-wrapper").children("#chief_recommend").children(".recommend-module").children("div")
   // console.log($shouye)
@@ -14,8 +20,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
   $shouye.each(function(index,value){
     var $div = $(value)
     var upmingcheng = $div.find(".author").html().replace("up主：","")
-    //这里干你想干的事情
-    //用$(this)可以访问正在循环的元素
     console.log(upmingcheng)
     $.each(upname,function(i,v){
       if(upmingcheng == v){
@@ -23,9 +27,4 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
       }
     })
   })
-  // $.each($shouye,function(index,$value){
-  //   // if($shouye[index].children('.author').val())
-  //   console.log($value.children('.author').val())
-  // })
-  // console.log($("#app").children(".bili-wrapper").children("#chief_recommend").children(".recommend-module").children("div"))
 })
