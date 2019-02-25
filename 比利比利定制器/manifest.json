@@ -30,8 +30,13 @@
 	[
 		{
 			"matches": ["<all_urls>"],
-			"js": ["js/jquery-1.8.3.js","js/content-script.js"],
+			"js": ["js/jquery-1.8.3.js","js/content-start.js"],
 			"run_at": "document_start"
+		},
+		{
+			"matches":["https://www.bilibili.com/*"],
+			"js":["js/content-end.js"],
+			"run_at":"document_end"
 		}
 	],
 	"web_accessible_resources": 
