@@ -10,11 +10,6 @@ const $next = $recommend_module.children(".next") //一周按钮
 
 const $home_popularize = $wrapper.children("#home_popularize")
 const $bili_live = $wrapper.children("#bili_live")
-
-// $bili_live.find(".gg-floor-module").hide()
-
-// $wrapper.children("#home_popularize").hide()
-// console.log('测试jquery',$("#app").children(".bili-wrapper").children("#home_popularize").children(".l-con"))
 function recommend_module_clear(x){
   $recommend_module.children("div").each(function(index,value){
     var $div = $(value)
@@ -27,9 +22,13 @@ function recommend_module_clear(x){
     })
   })
 }//用于将在列表内的成员去除
+
+// var uparray = []
 chrome.runtime.onMessage.addListener((request, sender, sendResponse)=>{
   upname = JSON.parse(request.cmd)
+  uparray = upname
   recommend_module_clear(upname)
+
   $prev.click((e) => {
     // recommend_module_clear(upname)
     console.log(this)
@@ -39,3 +38,19 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse)=>{
     // recommend_module_clear(upname)
   })//一周按钮点击触发
 })
+
+
+// $(document).ready(function(){
+//   $('body').on('click', '#app .bili-wrapper .recommend-module .prev', function(){
+//     console.log(uparray)
+//     recommend_module_clear(uparray)
+//   })
+//   $('body').on('click', '#app .bili-wrapper .recommend-module .next', function(){
+//     console.log(uparray)
+//     recommend_module_clear(uparray)
+//   })
+// })
+
+
+$('#app .bili-wrapper #bili_live').hide() //屏蔽广告条
+$('#app .bili-header-m .nav-menu .nav-wrapper .fl ul .mobile').hide() //屏蔽下载APP
