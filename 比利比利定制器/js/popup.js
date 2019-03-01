@@ -1,14 +1,13 @@
-﻿console.log('你好，我是popup！');
+﻿
 $(function() {
-	console.log($('body'))
 	get_upname_list()
 })
 
 $('#ceshi').click((e)=>{
 	localStorage.setItem('chenyu',JSON.stringify({
-		a:1,
-		b:2
-	})
+			a:1,
+			b:2
+		})
 	);
   // chrome.storage.sync.set({'chenyu': '123456789'}, function() {
   //   // 通知保存完成。
@@ -46,24 +45,48 @@ $('#insert').click((e)=>{
 	console.log($("#upname").val())
 })
 
+
 function set_upname(x) {
 	var upname = localStorage.getItem('upname')
+	let x_array = x.split(" ")
 	if(upname){
 		upname = JSON.parse(upname)
-		var a =0
-		$.each(upname,function(index,value){
-			if(value ==x){
-				alert('已经有了')
-				a=1
+		if(x_array.length>0){
+			$.each(x_array,function(index,value){
+				var a =0
+				$.each(upname,function(k,v){
+					if(value ==v){
+						// alert('已经有了')
+						a=1
+					}
+				})
+				if(a==0){
+					upname.push(value)
+					localStorage.setItem('upname', JSON.stringify(upname))
+				}
+			})
+		} else{
+			var a =0
+			$.each(upname,function(k,v){
+				if(value ==v){
+					// alert('已经有了')
+					a=1
+				}
+			})
+			if(a==0){
+				upname.push(value)
+				localStorage.setItem('upname', JSON.stringify(upname))
 			}
-		})
-		if(a==0){
-			upname.push(x)
-			localStorage.setItem('upname', JSON.stringify(upname))
 		}
 	} else{
 		upname = []
-		upname.push(x)
+		if(x_array.length>0){
+			$.each(x_array,function(index,value){
+				upname.push(value)
+			})
+		} else{
+			upname.push(x)
+		}
 		localStorage.setItem('upname', JSON.stringify(upname))
 	}
 	get_upname_list()

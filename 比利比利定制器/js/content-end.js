@@ -22,20 +22,26 @@ function recommend_module_clear(x){
     })
   })
 }//用于将在列表内的成员去除
-
+// $prev.click()
+// $prev.click()
+// $prev.click()
 // var uparray = []
 chrome.runtime.onMessage.addListener((request, sender, sendResponse)=>{
   upname = JSON.parse(request.cmd)
   uparray = upname
   recommend_module_clear(upname)
 
-  $prev.click((e) => {
-    // recommend_module_clear(upname)
-    console.log(this)
+  $prev.on('click',(e) => {
+    setTimeout(function(){ 
+      recommend_module_clear(upname)
+    }, 150)
+    // $recommend_module.children("div").hide()
+    console.log('这里是点了左边')
   })//昨日按钮点击触发
   $next.click((e) => {
-    console.log(this)
-    // recommend_module_clear(upname)
+    setTimeout(function(){ 
+      recommend_module_clear(upname)
+    }, 150)
   })//一周按钮点击触发
 })
 
@@ -54,3 +60,5 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse)=>{
 
 $('#app .bili-wrapper #bili_live').hide() //屏蔽广告条
 $('#app .bili-header-m .nav-menu .nav-wrapper .fl ul .mobile').hide() //屏蔽下载APP
+$('#app .bili-header-m .nav-menu .nav-wrapper .fl ul .loc-menu').hide() //屏蔽漫画
+$('#app .bili-header-m .nav-menu .nav-wrapper .fl ul .buy').hide() //屏蔽会员购
