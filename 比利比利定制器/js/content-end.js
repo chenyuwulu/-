@@ -34,14 +34,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse)=>{
   $prev.on('click',(e) => {
     setTimeout(function(){ 
       recommend_module_clear(upname)
-    }, 150)
+    }, 100)
     // $recommend_module.children("div").hide()
     console.log('这里是点了左边')
   })//昨日按钮点击触发
   $next.click((e) => {
     setTimeout(function(){ 
       recommend_module_clear(upname)
-    }, 150)
+    }, 100)
   })//一周按钮点击触发
 })
 
@@ -59,6 +59,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse)=>{
 
 
 $('#app .bili-wrapper #bili_live').hide() //屏蔽广告条
-$('#app .bili-header-m .nav-menu .nav-wrapper .fl ul .mobile').hide() //屏蔽下载APP
-$('#app .bili-header-m .nav-menu .nav-wrapper .fl ul .loc-menu').hide() //屏蔽漫画
-$('#app .bili-header-m .nav-menu .nav-wrapper .fl ul .buy').hide() //屏蔽会员购
+$('#app .bili-wrapper #bili_bangumi .bangumi-module .gg-floor-module').hide() //屏蔽广告条
+// $('#app .bili-header-m .nav-menu .nav-wrapper .fl ul .mobile').hide() //屏蔽下载APP
+// $('#app .bili-header-m .nav-menu .nav-wrapper .fl ul .loc-menu').hide() //屏蔽漫画
+// $('#app .bili-header-m .nav-menu .nav-wrapper .fl ul .buy').hide() //屏蔽会员购
