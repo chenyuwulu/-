@@ -56,10 +56,16 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse)=>{
 //     recommend_module_clear(uparray)
 //   })
 // })
+setTimeout(() => {
+  $('#app .gg-floor-module').remove() //删除掉页面内广告条类名的元素
+  console.log("执行了一次")
+}, 1000);
+$('#app .gg-floor-module').remove() //删除掉页面内广告条类名的元素
+$('#app .bili-wrapper .sub-channel-m .r-con .mobile-link-l').remove()//删除掉页面内的右侧下载app的二维码
+// $('#app .bili-wrapper .report-scroll-module .gg-floor-module').hide() //屏蔽广告条
+// $('#app .bili-wrapper .channel-m .gg-floor-module').hide()
 
-
-$('#app .bili-wrapper #bili_live').hide() //屏蔽广告条
-$('#app .bili-wrapper #bili_bangumi .bangumi-module .gg-floor-module').hide() //屏蔽广告条
+// $('#app .bili-wrapper #bili_bangumi .bangumi-module .gg-floor-module').hide() //屏蔽广告条
 // $('#app .bili-header-m .nav-menu .nav-wrapper .fl ul .mobile').hide() //屏蔽下载APP
 // $('#app .bili-header-m .nav-menu .nav-wrapper .fl ul .loc-menu').hide() //屏蔽漫画
 // $('#app .bili-header-m .nav-menu .nav-wrapper .fl ul .buy').hide() //屏蔽会员购
