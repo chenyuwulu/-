@@ -3,93 +3,37 @@
 
 <head>
 	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>popup</title>
+	<link rel="stylesheet" href="static/bootstrap/css/bootstrap.css">
+	<script src="static/bootstrap/js/bootstrap.js"></script>
 </head>
-<style>
-	.body-container {
-		width: 300px;
-		min-height: 500px;
-	}
-	.input-container {
-		margin-top: 10px;
-	}
-	.name-input {
-		width: 150px;
-		margin-left: 55px;
-		height: 25px;
-	}
-	.submit-container {
-		cursor: pointer;
-		width: 40px;
-		height: 25px;
-		display: inline-block;
-		background: #3498db;
-		overflow: hidden;
-		position: absolute;
-	}
-	.submit-label {
-		line-height: 25px;
-		height: 25px;
-		font-size: 11px;
-		padding: 5px;
-		color: white;
-		background: #3498db;
-	}
-	.text-center {
-		text-align: center;
-	}
-	.title {
-		padding-top: 20px;
-		padding-bottom: 20px;
-		margin: 0;
-		background: #3498db;
-		font-weight: bold;
-		color: white;
-		font-family: Microsoft YaHei, '宋体', Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
-	}
-	.table-container {
-		margin-top: 10px;
-	}
-	.table-name {
-		max-width: 250px;
-	}
-	.feedback {
-		color: #CCCCCC;
-		margin: 10px;
-		font-size: 12px;
-	}
-</style>
-
 <body>
-	<div class="body-container">
-		<h4 class="text-center title">Bilibili 清洁者</h4>
-		<div class="input-container">
-			<input id="upname" placeholder="up名称" class="name-input" />
-			<div class="submit-container">
-				<span id="insert" class="submit-label">添加</span>
+	<div class="container-fluid" style="padding-left: 0px;padding-right:0px;width: 300px;">
+		<div class="card bg-primary text-white">
+			<div class="card-body" style="text-align: center;font-weight: 700;font-size: 30px;">清洁者</div>
+		</div>
+		<div class="row" style="padding: 20px 20px;">
+			<input id="upname" placeholder="请输入UP名称" class="form-control col-8" />
+			<div class="col-4">
+				<button id="insert" class="btn btn-primary">添加</button>
 			</div>
 		</div>
-		<div class="table-container">
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>名称</th>
-						<th>操作</th>
-					</tr>
-				</thead>
-				<tbody id="tablede">
-					
-				</tbody>
-			</table>
+		<div class="row" style="padding: 10px 20px 10px 20px;border-top:1px solid rgba(0, 0, 0, 0.125);border-bottom:1px solid rgba(0, 0, 0, 0.125);">
+			<div class="col-8">名称</div>
+			<div class="col-4">操作</div>
 		</div>
-		<div class="feedback text-center">尘雨(修改版))</div>
-	</div>
-	<!-- <button id="ceshi">测试按钮</button>
-	<button id="getname">获取存在本地的内容</button> -->
-	<button id="remote">清空记录表</button>
-	<!-- <script type="text/javascript" src="js/jquery-1.8.3.js"></script> -->
-	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
-	<script type="text/javascript" src="js/popup.js"></script>
-</body>
+		<div style="padding: 10px 20px 10px 20px;" id="tablede">
 
+		</div>
+		<!-- <div class="feedback text-center">尘雨(修改版))</div>
+		<button id="ceshi">测试按钮</button>
+		<button id="getname">获取存在本地的内容</button>
+		<button id="remote">清空记录表</button> -->
+		<button id="remote" type="button" class="btn btn-dark" style="width: 100%;margin-bottom:10px;">清空记录表</button>
+	</div>
+</body>
+<script type="text/javascript" src="static/jquery/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="static/popper/popper.js"></script>
+<script type="text/javascript" src="js/popup.js"></script>
 </html>

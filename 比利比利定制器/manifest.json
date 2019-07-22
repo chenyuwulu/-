@@ -1,17 +1,17 @@
 {
 	"manifest_version": 2,
-	"name": "比利比利清道妇",
+	"name": "清洁者",
 	"version": "1.0",
-	"description": "demo版",
+	"description": "清理不需要的内容",
 	"author": "FAQ",
 	"icons":
 	{
-		"48": "icon.png",
-		"128": "icon.png"
+		"48": "static/icon/icon.png",
+		"128": "static/icon/icon.png"
 	},
 	"browser_action": 
 	{
-		"default_icon": "icon.png",
+		"default_icon": "static/icon/icon.png",
 		"default_popup": "popup.html"
 	},
 	"permissions":
@@ -30,7 +30,7 @@
 	[
 		{
 			"matches": ["<all_urls>"],
-			"js": ["js/jquery-1.8.3.js","js/content-start.js"],
+			"js": ["static/jquery/jquery-3.4.1.js","js/content-start.js"],
 			"run_at": "document_start"
 		},
 		{

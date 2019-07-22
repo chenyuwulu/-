@@ -44,6 +44,13 @@ $('#insert').click((e)=>{
 	set_upname(name)
 	console.log($("#upname").val())
 })
+$(document).on('click', '.deleteupname', (e)=>{
+	console.log(e)
+	var upname = JSON.parse(localStorage.getItem('upname'))
+	upname.splice(e.target.dataset.index,1)
+	localStorage.setItem('upname', JSON.stringify(upname))
+	get_upname_list()
+ })
 
 
 function set_upname(x) {
@@ -92,20 +99,21 @@ function set_upname(x) {
 	get_upname_list()
 }
 
-$(".deleteupname").live("click",function(){
-	console.log(this.dataset.index)
-	var upname = JSON.parse(localStorage.getItem('upname'))
-	upname.splice(this.dataset.index,1)
-	localStorage.setItem('upname', JSON.stringify(upname))
-	get_upname_list()
-})
-
 function get_upname_list() {
-	var upname = localStorage.getItem('upname')
+	let upname = localStorage.getItem('upname')
 	upname = JSON.parse(upname)
-	var html =''
-	$.each(upname,function(index,value){
-		html+='<tr><td class="table-name">'+value+'</td><td><button data-index="'+ index +'" class="deleteupname">删除</button></td></tr>'
-	})
+	let html =''
+	if(upname.length==0){
+		html+='<div style="width:100%;text-align: center;">暂无信息</div>'
+		$('#remote').hide()
+	} else{
+		$.each(upname,function(index,value){
+			html+='<div class="row" style="padding-top:10px;padding-bottom:10px;">'
+			html+='<div class="col-8" style="line-height: 38px;">'+ value +'</div>'
+			html+='<button type="button" data-index="'+ index +'" class="btn btn-secondary col-4 deleteupname">删除</button>'
+			html+='</div>'
+		})
+		$('#remote').show()
+	}
 	$("#tablede").html(html);
 } //获取到本地存储里的up名字列表
