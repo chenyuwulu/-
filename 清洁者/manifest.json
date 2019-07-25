@@ -4,6 +4,7 @@
 	"version": "1.0",
 	"description": "清理不需要的内容",
 	"author": "FAQ",
+	"homepage_url": "https://github.com/chenyuwulu/we_sub/tree/chrome",
 	"icons":
 	{
 		"48": "static/icon/icon.png",
