@@ -10,13 +10,28 @@
 
 <body>
 	<div>
-		<input type="file" onchange="importf(this)" />
+		<input type="file" id="files" />
 		<div id="demo"></div>
+	</div>
+	<div>
+		<table id="table1">
+			<thead>
+				<tr>
+					<td>up姓名</td>
+				</tr>
+			</thead>
+			<tbody id="tdbo">
+			</tbody>
+		</table>
+
+		<button type="button" id="daochu">导出按钮</button>
 	</div>
 </body>
 <script type="text/javascript" src="static/jquery/jquery-3.4.1.js"></script>
 <script type="text/javascript" src="static/bootstrap/js/bootstrap.js"></script>
 <script type="text/javascript" src="static/popper/popper.js"></script>
 <script type="text/javascript" src="static/js_xlsx/xlsx.full.min.js"></script>
-<script type="text/javascript" src="js/options.js"></script>
+<script type="text/javascript" src="js/options/func_sub.js"></script>
+<script type="text/javascript" src="js/options/options.js"></script>
+
 </html>
