@@ -10,7 +10,6 @@ function getupname() {
 }
 getupname()
 
-
 $('#daochu').on('click', () => {
 	// console.log(shuzu)
 	// var sheet = XLSX.utils.aoa_to_sheet(shuzu)
