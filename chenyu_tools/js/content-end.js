@@ -68,4 +68,17 @@ $('#app .bili-wrapper .sub-channel-m .r-con .mobile-link-l').remove()//删除掉
 // $('#app .bili-wrapper #bili_bangumi .bangumi-module .gg-floor-module').hide() //屏蔽广告条
 // $('#app .bili-header-m .nav-menu .nav-wrapper .fl ul .mobile').hide() //屏蔽下载APP
 // $('#app .bili-header-m .nav-menu .nav-wrapper .fl ul .loc-menu').hide() //屏蔽漫画
-// $('#app .bili-header-m .nav-menu .nav-wrapper .fl ul .buy').hide() //屏蔽会员购
+// $('#app .bili-header-m .nav-menu .nav-wrapper ul .buy').hide() //屏蔽会员购
+function top_menu_left(){
+  setTimeout(()=>{ 
+    const nav_menu_left_arr = $('#app .bili-header-m .nav-menu .nav-wrapper-left ul').children()
+    $.each(nav_menu_left_arr,function(key,value){
+      // console.log(nav_menu_left_arr)
+      if(value.textContent == '70年'){
+        $(value).hide()
+      }
+    })
+   }, 100)
+  
+}
+top_menu_left()
