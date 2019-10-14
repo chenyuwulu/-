@@ -1,8 +1,8 @@
 {
 	"manifest_version": 2,
-	"name": "清洁者",
+	"name": "B站增强工具包",
 	"version": "1.0",
-	"description": "清理不需要的内容",
+	"description": "把自己能想到的功能付出实践",
 	"author": "FAQ",
 	"homepage_url": "https://github.com/chenyuwulu/we_sub/tree/chrome",
 	"icons":
