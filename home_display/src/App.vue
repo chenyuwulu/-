@@ -13,7 +13,8 @@
     getCurrentInstance
   } from 'vue'
   import { useRouter } from 'vue-router'
-
+  import mitt from "mitt"
+  const mitts = mitt()
   export default {
     setup() {
       const { ctx } = getCurrentInstance()
@@ -90,7 +91,12 @@
       this.ctx.$axios.get("http://dev.chargefrog.com:3000/mock/15/msapi/hr/reminder/findReminder").then(res=>{
         console.log(res)
       })
-      // console.log("kana",this.ctx.$http.get("http://dev.chargefrog.com:3000/mock/15/msapi/hr/reminder/findReminder"))
+      mitts.on("ceshi",()=>{
+        // console.log(1111)
+      })
+      setTimeout(()=>{
+        mitts.emit("ceshi")
+      })
     },
     method:{
 
@@ -100,11 +106,10 @@
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #nav {
