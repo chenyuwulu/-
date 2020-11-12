@@ -83,9 +83,9 @@
     created(){
       setTimeout(() => {
         window.onresize = ()=>{
-          this.platform(window)
+          // this.platform(window)
         }
-        this.platform(window)
+        // this.platform(window)
       },0)
       this.ctx.$axios.get("http://dev.chargefrog.com:3000/mock/15/msapi/hr/reminder/findReminder").then(res=>{
         console.log(res)

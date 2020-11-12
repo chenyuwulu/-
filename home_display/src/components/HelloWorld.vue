@@ -32,15 +32,19 @@
     </a-button>
     <a-rate :value="2" />
     <LoadingOutlined />
+    <van-button type="danger" block>块级元素</van-button>
   </div>
 </template>
 
 <script>
 import { LoadingOutlined } from '@ant-design/icons-vue';
+import { Button } from "vant"
+// import { Button } from 'ant-design-vue'
 export default {
   name: 'HelloWorld',
   components:{
-    LoadingOutlined
+    LoadingOutlined,
+    "van-button":Button
   },
   props: {
     msg: String
